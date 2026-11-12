@@ -1,0 +1,30 @@
+---
+title: "Configuring Routing"
+slug: tenant-administration/admin-06-configuration/admin-06-4-configuring-routing
+---
+
+The procedures below describe how to manage workers and skill-based routing.
+
+One of Voca's conversational interaction center capabilities is to route calls to workers, based on their availability and skill sets.
+
+The Administrator can configure the skill-based routing logic based on the following flow:
+
+- [Skills](/tenant-administration/admin-06-configuration/admin-06-4-configuring-routing/admin-06-4-1-configuring-skills)
+- [Workers](/tenant-administration/admin-06-configuration/admin-06-4-configuring-routing/admin-06-4-2-configuring-workers)
+- [Recording Profiles](/tenant-administration/admin-06-configuration/admin-06-4-configuring-routing/admin-06-4-3-configuring-recording-profiles)
+- [Worker status events](/tenant-administration/admin-06-configuration/admin-06-4-configuring-routing/admin-06-4-4-configuring-worker-status-events)
+- [Conversation Template](/tenant-administration/admin-06-configuration/admin-06-4-configuring-routing/admin-06-4-5-configuring-conversation-templates)
+- [Worker group](/tenant-administration/admin-06-configuration/admin-06-4-configuring-routing/admin-06-4-6-configuring-workers-group)
+- [Callback](/tenant-administration/admin-06-configuration/admin-06-4-configuring-routing/admin-06-4-7-configuring-callback)
+- [Queues](/tenant-administration/admin-06-configuration/admin-06-4-configuring-routing/admin-06-4-8-configuring-queues)
+
+  <Note>
+  Pre-requisites for using skill-based routing:
+
+  - Direct Routing SBC connected to Microsoft Teams tenant
+  - Microsoft Teams user with phone system license
+  - HTTPS connectivity (Port 8443) between the agent desktop client network to Voca
+  - The organization Administrator (Microsoft 365) should grant tenant-wide Administrator consent to the agent application on behalf of the organization.
+
+    Use the following link to grant consent (replace \{tenant\_id\} with the organization Azure Tenant ID): https://login.microsoftonline.com/\{Tenant\_ ID\}/adminconsent?client\_id=77f087b6-9731-4bb7-a6fa- 7d3d0bccd725&redirect\_uri=https://voca-workerapp.audiocodes.io/
+  </Note>

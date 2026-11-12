@@ -1,0 +1,33 @@
+---
+title: "Call Dispositions"
+slug: tenant-administration/admin-09-call-dispositions
+---
+
+The following describes the different call dispositions that are supported in Voca:
+
+- **All Agents are Offline:** All worker/queue members are logged out from the queue.
+- **Call Abandoned:** The call was abandoned while waiting in the queue.
+- **Call Started:** Script execution failed. Error in Communication Portal software. Please contact Voca Team.
+- **Disconnect:** Refers to calls that disconnected before the transfer (for example, calls canceled by the caller after listening to the prompt. It might be that an attended transfer was not successful, and then the caller canceled the call).
+- **DTMF Transfer:** The caller dialed the number during speech recognition, to be transferred to a specific extension.
+- **Duplicate Name and Transfer to Operator:** Destination was recognized but due to duplicate names, the caller was transferred to the Operator.
+- **Early Disconnect:** Refers to calls that were canceled by the caller before providing spoken input.
+- **Flow Designer Error:** Refers to calls that reached flow designer incomplete flows.
+- **Max Call Limit:** This limit is reached when the maximum number of concurrent calls exceeds the number of Voca licenses originally allocated to the designated service. This happens when the service is defined using the Web Administrator with N number of licenses (concurrent calls). The N+1 call that reaches the Voca system is rejected by the Voca service with SIP Error 603.
+- **Max Call Limit Exceeded:** This limit is reached when the maximum number of concurrent calls exceeds the maximum number of calls that was configured in the Queue level.
+- **Max Wait Time Exceeded:** This limit is reached when the maximum wait time exceeds the maximum wait time that was configured in the queue level.
+- **Missed Calls Notification:** A missed call notification was successfully sent to the contact/email that was configured.
+- **Missed Calls Notification Failed:** A missed call notification to the contact/email failed.
+- **Not at Working Hours:** Refers to calls reaching the service out of working hours.
+- **Operator:** Successfully transfers the call to the operator.
+- **Operator is Disabled:** Tries to transfer the call to the operator, but operator is disabled.
+- **Operator 2nd language:** IVR menu option for second language was selected.
+- **Operator at Confirmation:** Calls that were transferred to the operator, due to missing confirmation before transferring the call.
+- **Operator IVR Timeout:** The caller was routed to the operator when there was no response.
+- **Operator Request:** The caller said “Operator” during speech recognition, to be transferred to the operator.
+- **Operator Transfer Fail:** Transfer to the operator failed.
+- **Transfer:** Successfully transferred the call.
+- **Transfer Fail:** Tried to transfer the call and failed.
+- **Transferred from Queue:** Successfully transferred from the queue to a member of the queue.
+- **SMS Error:** Sending SMS failed.
+- **SMS Sent:** Calls that resulted in successfully sending a SMS.

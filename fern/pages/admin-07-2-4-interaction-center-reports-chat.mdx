@@ -1,0 +1,133 @@
+---
+title: "Interaction Center Reports - Chat"
+slug: reports-and-analytics/admin-07-generating-reports/admin-07-2-interaction-center-reports/admin-07-2-4-interaction-center-reports-chat
+---
+
+You can generate the following Chat Interaction Center historical reports:
+
+- [Worker Activity Report](#worker-activity-report)
+- [Queue Activity Report](#queue-activity-report)
+- [Worker Report](#worker-report)
+
+## Worker Activity Report
+
+The Chat Worker Activity report displays a summary of workers’ chat activities, including chats and workers state activities.
+
+### To generate Worker Activity report
+
+1. Open the Worker Activity Report page (**Reports** &gt; **Interaction Center Reports** &gt; **Chat Reports &gt; Worker Activity Report**); the following appears:
+
+   ![Worker Activity Report screenshot](../assets/images/p254-340.png)
+
+2. Select the appropriate filter fields:
+   - **Interval:** Defines how the report's date intervals are segmented. Select the check box to reveal a drop-down list of predefined time periods, based on the customer's end date ("Date To"):
+     - **Last Day:** Displays data from the past day, segmented by hours.
+     - **Last Week:** Displays data from the previous week, separated by days.
+     - **Last Month:** Displays data from the previous month, categorized by weeks.
+     - **Last Year:** Displays data from the last year, organized by months.
+   - **Date From:** Defines this report for a specific date/time range.
+   - **Date To:** Defines this report for a specific date/time range.
+   - **Worker:** Defines information that is related to a specific worker.
+   - **Worker Group:** Defines information that is related to a specific worker group.
+   - **Interaction Type**: Defines if the interaction is a webchat or an SMS or both (All).
+   - **Timezone Display Mode:** Defines this report in different time zones. The time zone of calls can be one of the following options:
+     - **Tenant time zone:** Defines the information in this report based on the tenant configured time zone.
+     - **Flow time zone:** Defines the information in this report based on the time zone configured under the Telephony Setting settings.
+     - **Local time zone (Web):** Display the information in this report on the browser local time zone.
+3. The following is a description of the report fields.
+
+   | **Field** | **Description** |
+   | --- | --- |
+   | Worker Name | Defines the first name and last name of the Worker. |
+   | Chats Presented | Defines the number of chats routed to the Worker, regardless of whether the Worker replayed the chat. |
+   | Chats Handled | Defines the number of chats that were accepted by the worker. |
+   | Chats Declined | Defines the number of chats that were not answered or were declined by the Worker. |
+   | Handle Ratio (%) | Defines the Handle ratio: chats that the Worker handled / chats that are routed to the Worker (Overall percentage). |
+   | Transfer Out | Defines the available field for queued chats: number of chats that were transferred by the worker to other workers. |
+   | Max Interaction Time | Defines the longest interacting time of any chat that the Worker handled. Talk Time refers to the elapsed time between the time a Worker accepted the chat and the time that the chat was sent or transferred. |
+   | Avg. Interaction Time | Defines the average interacting time for chats that the Worker handled. |
+
+4. Click **Generate** to generate the report; click **Export CSV** to export the report in CSV format.
+
+   ![Worker Activity Report screenshot](../assets/images/p256-341.png)
+
+## Queue Activity Report
+
+The Queue Activity Report displays summarized information of chats per queue (e.g., Presented and Handled).
+
+The procedure below describes how to generate a Queue Activity Report.
+
+### To generate Queue Activity report
+
+1. Open the Queue Activity Report page (**Reports** &gt; **Interaction Center Reports** &gt; **Chat Reports** &gt; **Queue Activity Report**); the following appears:
+
+   ![Queue Activity Report screenshot](../assets/images/p256-342.png)
+
+2. Select the appropriate filter fields to generate your report:
+   - **Interval:** Defines how the report's date intervals are segmented. Select the check-box to reveal a drop-down list of predefined time periods, based on the customer's end date ("Date To"):
+     - **Last Day:** Displays data from the past day, segmented by hours.
+     - **Last Week:** Shows data from the previous week, separated by days.
+     - **Last Month:** Presents data from the previous month, categorized by weeks.
+     - **Last Year:** Displays data from the last year, organized by months.
+   - **Date From:** Defines this report for a specific date/time range.
+   - **Date To:** Defines this report for a specific date/time range.
+   - **Queue Name:** Defines information that is related to a specific queue name or ‘Any’ to show statistics for all call queues.
+   - **Interaction Type**: Defines if the interaction is a webchat or an SMS or both (All).
+   - **Timezone Display Mode:** Defines this report in a different time zone.
+     - **Tenant time zone:** Defines the information in this report based on the tenant configured time zone.
+     - **Flow time zone:** Defines the information in this report based on the time zone configured under the Telephony Setting settings.
+     - **Local time zone (Web):** Defines the information in this report on the browser local time zone.
+3. The following is a description of the report fields.
+
+   | **Field** | **Description** |
+   | --- | --- |
+   | Queue Name | Defines the queue to which the chat is queued. |
+   | Chats Presented | Defines the number of chats routed to the queue, regardless of whether a Worker replied. |
+   | Chats Handled | Defines the number of chats that are handled by this Queue. A chat is handled if a customer is connected to a Worker while queued for this Queue. |
+   | Max. Handle Time | Defines the longest handle time of any chat that the queue handled by the Worker. |
+   | Avg. Handle Time | Defines the average handle time for all chats that the queue handled by the Worker. |
+   | Avg. Queue Time | Defines the average queue time for all chats routed to the Queue. |
+   | Max. Queue Time | Defines the longest queue time of any one chat that was routed to the Queue. |
+   | Avg. Answer Speed | Defines the Average Answer Speed (total queue time / chats handled). |
+
+4. Click **Generate** to generate the report; click **Export CSV** to export the report in CSV format.
+
+   ![Queue Activity Report screenshot](../assets/images/p258-343.png)
+
+## Worker Report
+
+The Worker Report presents a summary of each chat that is received by the Worker.
+
+### To generate Worker Report
+
+1. Open the Worker Report page (**Reports** &gt; **Interaction Center Reports** &gt; **Chat Reports** &gt; **Worker Report**); the following appears:
+
+   ![Worker Report screenshot](../assets/images/p258-344.png)
+
+2. Select the appropriate filter fields to generate your report:
+   - **Date From:** Defines this report for a specific time range.
+   - **Date To:** Defines this report for a specific time range.
+   - **Worker:** Defines information that is related to a specific worker.
+   - **Queue Name:** Defines information that is related to a specific queue name or ‘Any’ to show statistics for all call queues.
+   - **Interaction Type**: Defines if the interaction is a webchat or an SMS or both (All).
+   - **Timezone Display Mode:** Display this report in different time zone. The time zone of calls can be one of the following options:
+     - **Tenant time zone:** Display the information in this report based on the tenant configured time zone.
+     - **Flow time zone:** Display the information in this report based on the time zone configured under the Telephony Setting settings.
+     - **Local time zone (Web):** Display the information in this report on the browser local time zone.
+3. The following is a description of the report fields.
+
+   | **Report Column** | **Description** |
+   | --- | --- |
+   | Worker Name | Defines the name of the worker. |
+   | Chat Start Time | Defines the date and time the chat started. |
+   | Chat End Time | Defines the date and time the chat ended. |
+   | Chat Duration | Defines the duration of the chat. |
+   | Status | Defines whether the chat was ‘Accepted’ or ‘Declined’ by the worker. |
+   | Chat Routed Queue | Defines the queue to which the chat is queued. |
+   | Chat Skills | Defines the skills that are associated with the queue to which the chat is routed. |
+   | Interaction Time | Defines how long the worker handled the chat. |
+   | Wrap-up Time | Defines the duration it took the worker to complete the wrap-up. |
+
+4. Click **Generate** to generate the report; click **Export CSV** to export the report in CSV format.
+
+   ![Worker Report screenshot](../assets/images/p259-345.png)

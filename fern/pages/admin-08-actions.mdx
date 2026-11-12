@@ -1,0 +1,46 @@
+---
+title: "Actions"
+slug: tenant-administration/admin-08-actions
+---
+
+The following actions are supported by Voca:
+
+- **Play prompt:** Plays a prompt, and then performs the next action.
+- **Go to menu:** Transfers the caller to the menu.
+- **Transfer to Operator:** Transfers the call to the operator.
+- **Collect and Dial:** Allows the user to press several DTMF keys, and then transfers the caller to the collected number.
+- **Disconnect:** Automatically disconnects the caller.
+- **Transfer to Phone:** Transfers the call to a defined phone number.
+- **Silent Transfer to Phone:** Transfers the call to a defined phone number without playing the "Transferring the call to…" prompt.
+- **Transfer to Extension:** Transfers the call to the extension number.
+- **Attended Transfer:** Transfers the call to a predefined number in a supervised way. If the transfer destination is not reachable (e.g., busy, no answer), the next action is performed.
+- **Send SMS:** Allows for an SMS message to be sent.
+
+  <Note>
+  - If you have selected **Send SMS** and you are calling from a mobile phone, the SMS is sent directly to your mobile phone. If you are calling from a landline, the system asks you to enter the mobile number that you wish to receive the SMS on.
+  - The **Send SMS** action is only applicable if the Administrator has given the appropriate permissions.
+  </Note>
+
+- **Missed Call Notification:** A missed call notification will be sent to the customer via email. For this action, there are two options:
+  - **Without Voice Recording:** The system doesn’t let the customer leave a message and just sends an email notification for this missed call.
+  - **With Voice Recording:** The system lets the user to leave a message, and then send an email notification with the recorded message.
+
+  <Note>
+  The **Missed Call Notification** action is only applicable if Voca is integrated with the SMTP server. For more information refer to [Email Setting Configuration](/tenant-administration/admin-06-configuration/admin-06-7-system-settings#general-email-configuration).
+  </Note>
+
+- **Go To Contact:** Transfers the call to specific contact.
+- **Go to Department:** Transfers the call to specific department.
+- **Transfer to Queue:** Transfers the call to a predefined call queue.
+- **Go To Flow:** Transfers the call to predefined flow from the flow designer.
+- **Leave Message:** Lets the user leave a message and send an email notification with the recorded message.
+
+  <Note>
+  The **Leave Message** action is only applicable if Voca is integrated with the SMTP server.
+  </Note>
+
+- **Callback:** Lets users request a callback, reserving their place in the queue. When their turn arrives, Voca CIC automatically calls them back.
+
+  <Note>
+  The **Callback** action is available only for in-queue menus configured within the queue configuration page.
+  </Note>
