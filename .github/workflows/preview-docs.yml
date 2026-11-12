@@ -1,0 +1,40 @@
+name: Preview docs
+
+on:
+  pull_request:
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  preview:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - name: Install Fern CLI
+        run: npm install -g fern-api
+      - name: Check
+        run: fern check && fern docs broken-links
+      - name: Generate preview
+        id: preview
+        env:
+          FERN_TOKEN: ${{ secrets.FERN_TOKEN }}
+        run: |
+          OUTPUT=$(fern generate --docs --preview 2>&1) || true
+          echo "$OUTPUT"
+          URL=$(echo "$OUTPUT" | grep -oE 'https://[^ ]+buildwithfern\.com[^ ]*' | head -1)
+          echo "url=$URL" >> "$GITHUB_OUTPUT"
+      - name: Comment preview link
+        if: steps.preview.outputs.url != ''
+        uses: actions/github-script@v7
+        with:
+          script: |
+            github.rest.issues.createComment({
+              ...context.repo,
+              issue_number: context.issue.number,
+              body: `Docs preview: ${{ steps.preview.outputs.url }}`
+            })
