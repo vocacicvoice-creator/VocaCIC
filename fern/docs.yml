@@ -3,6 +3,9 @@ instances:
 
 title: Voca CIC Docs
 
+announcement:
+  message: "Content version: Voca CIC Administrator's Guide 12.2.1"
+
 colors:
   accentPrimary:
     light: "#1976D2"
