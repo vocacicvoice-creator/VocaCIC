@@ -1,6 +1,12 @@
 instances:
 - url: vocacic.docs.buildwithfern.com
 title: Voca CIC Docs
+logo:
+  light: ./assets/logo/voca-logo-light.png
+  dark: ./assets/logo/voca-logo-dark.png
+  height: 32
+  href: /welcome
+favicon: ./assets/logo/favicon.png
 announcement:
   message: 'Content versions: Voca CIC Administrator''s Guide 12.2.1 · Flow Designer User''s Manual 12.2'
 colors:
