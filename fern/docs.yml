@@ -10,6 +10,7 @@ colors:
   background:
     light: '#FFFFFF'
     dark: '#1B1E26'
+css: ./styles.css
 layout:
   searchbar-placement: header
   tabs-placement: header
