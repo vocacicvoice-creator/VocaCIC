@@ -8,3 +8,45 @@ p img[alt="button"] {
   max-height: 1.6em;
   width: auto;
 }
+
+/* ---- Black top bar (Voca Roadmap style) ---- */
+#fern-header {
+  background-color: #0E1020 !important;
+  background-image: none !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+#fern-header .fern-header-tabs-list a[role="tab"] {
+  color: #B9C0D4 !important;
+  border-radius: 100px;
+}
+#fern-header .fern-header-tabs-list a[role="tab"]:hover {
+  color: #FFFFFF !important;
+}
+#fern-header .fern-header-tabs-list a[role="tab"][data-state="active"] {
+  color: #FFFFFF !important;
+  background-color: rgba(108, 92, 224, 0.28) !important;
+}
+#fern-header .fern-header-tabs-list a[role="tab"]::after,
+#fern-header .fern-header-tabs-list a[role="tab"] > span::after {
+  background-color: transparent !important;
+}
+#fern-header #fern-search-button {
+  color: #B9C0D4 !important;
+  background-color: rgba(255, 255, 255, 0.08) !important;
+  border-color: rgba(255, 255, 255, 0.18) !important;
+  border-radius: 100px;
+}
+#fern-header #fern-search-button .fern-kbd {
+  color: #B9C0D4 !important;
+  background-color: transparent !important;
+  border-color: rgba(255, 255, 255, 0.25) !important;
+}
+#fern-header #fern-ask-ai-button,
+#fern-header .fern-header-mobile-menu-button button,
+#fern-header .fern-header-navbar-links a {
+  color: #B9C0D4 !important;
+}
+#fern-header .fern-logo img {
+  max-height: 30px;
+  width: auto;
+}
