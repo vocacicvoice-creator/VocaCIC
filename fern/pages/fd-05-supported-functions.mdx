@@ -1,0 +1,352 @@
+---
+title: "Supported Functions"
+slug: flow-designer-manual/expressions-and-functions/fd-05-supported-functions
+---
+
+<Info>
+Content version: **Voca CIC Flow Designer User's Manual, Version 12.2**
+</Info>
+
+The following are different types of supported functions that can be used:
+
+- [Contains](/flow-designer-manual/expressions-and-functions/fd-05-supported-functions#contains)
+
+- [Date](/flow-designer-manual/expressions-and-functions/fd-05-supported-functions#date)
+
+- [DateConvert](/flow-designer-manual/expressions-and-functions/fd-05-supported-functions#dateconvert)
+
+- [DateParse](/flow-designer-manual/expressions-and-functions/fd-05-supported-functions#dateparse)
+
+- [GetJsonValue](/flow-designer-manual/expressions-and-functions/fd-05-supported-functions#getjsonvalue)
+
+- [Length](/flow-designer-manual/expressions-and-functions/fd-05-supported-functions#length)
+
+- [Lower](/flow-designer-manual/expressions-and-functions/fd-05-supported-functions#lower)
+
+- [Now](/flow-designer-manual/expressions-and-functions/fd-05-supported-functions#now)
+
+- [NowUtc](/flow-designer-manual/expressions-and-functions/fd-05-supported-functions#nowutc)
+
+- [Replace](/flow-designer-manual/expressions-and-functions/fd-05-supported-functions#replace)
+
+- [SubString](/flow-designer-manual/expressions-and-functions/fd-05-supported-functions#substring)
+
+- [Trim](/flow-designer-manual/expressions-and-functions/fd-05-supported-functions#trim)
+
+- [Upper](/flow-designer-manual/expressions-and-functions/fd-05-supported-functions#upper)
+
+- [WeekDay](/flow-designer-manual/expressions-and-functions/fd-05-supported-functions#weekday)
+
+## Contains
+
+The Contains function is used to determine the presence of a specific search text within a source text string. If the search text is found within the source text, the function returns 'True'; otherwise, it returns 'False.' The Contains function is case-sensitive. This means the search treats upper and lowercase letters differently. Be aware of case sensitivity when utilizing this function as it can impact the results based on the letter casing of the text being examined.
+
+**Syntax**
+
+```text
+Contains(source text string, search text string)
+```
+
+**Example**
+
+```text
+Contains("Flight to New York","New York") -> returns 'True'
+Contains("Flight to New York","NEW YORK") -> returns 'False'
+```
+
+## Date
+
+The Date function is used for manipulating dates and times. It receives a text string as input and returns it as a date object using the format 'mm/dd/yyyy hh:mm:ss tt', representing month/day/year, and time in a 12-hour clock format. The function also includes robust error handling, returning NULL for non-string inputs or when encountering parsing issues. This ensures reliable and predictable behavior even with unexpected input. If no date is provided, it defaults to returning the current time with the current date.
+
+**Syntax**
+
+```text
+Date(text string)
+```
+
+**Example**
+
+```text
+Date("08/24/2023 16:22:53") -> returns '08/24/2023 4:22:53 PM'
+Date("2023-08-24T04 :22 :53.53") -> returns '08/24/2023 4:22:53 AM'
+Date("2023-08-25T00 :00 :00") -> returns '08/25/2023 12:00:00 AM'
+Date("Monday, 24 August 2023") -> returns '08/24/2023 12:00:00 AM'
+Date("08/24/2023") -> returns '08/24/2023 12:00:00 AM'
+Date("16 :33 :44") -> returns '08/24/2023 4:33:44 PM'
+```
+
+## DateConvert
+
+The DateConvert function receives two inputs: a date/time string, and a the desired output date\\time format. The function converts the input string to the requested format and returns the new string in the specified format.
+
+If the provided input is not a valid string, or if the converting process fails (for example, the text is not in a valid date format), the function returns NULL.
+
+**Syntax**
+
+```text
+DateConvert (date/time text string, requested output date/time format text string)
+```
+
+**Example**
+
+```text
+DateConvert("09/03/2023","dd/MM/yyyy")-> returns '03/09/2023'
+DateConvert("09/03/2023","dddd, dd MMMM yyyy")-> returns 'Sunday, 03 September 2023'
+DateConvert("09/03/2023 03:45:00 PM","yyyy-MM-ddTHH:mm:ss")-> returns '2023-09-03T15:45:00
+DateConvert("16:53:00","hh:mm tt")-> returns '04:53 PM'
+```
+
+## DateParse
+
+The DateParse function manipulates date objects. It receives two key parameters: a date object and a date format string. This function transforms the input date object to a customized date representation based on the provided format string, returning it as a string. If input errors occur, such as incompatible date formats, it returns NULL, ensuring dependable behavior.
+
+**Syntax**
+
+```text
+DateParse(date object, requested date format)
+```
+
+**Example**
+
+If there is a ‘date‘ variable saved with the value of “08/24/2023 4:22:53 PM”, the function returns:
+
+```text
+DateParse (${date},"dd/MM/yyyy") - > returns '24/08/2023'
+```
+
+## GetJsonValue
+
+The GetJsonValue function receives two input parameters: a JSON object, and a string specifying the desired path within the JSON. This function takes the provided JSON and attempts to retrieve the value located at the specified path. If the path exists and a valid value is found, the function returns that value. However, if the path cannot be found, or if any parsing errors occur during the process (e.g., invalid JSON syntax), the function returns NULL as a result. This ensures safe handling of input data and provides a consistent response when encountering issues with the JSON structure or path.
+
+**Syntax**
+
+```text
+GetJsonValue(JSON Object, JSON path string)
+```
+
+**Example**
+
+Assuming we have the following JSON that is saved in the context under the variable name ‘studentsList’:
+
+```text
+{
+  "name": "John Doe",
+  "age": 30,
+  "still.student": false,
+  "address": {
+    "street": "123 Main Street",
+    "city": "Anytown",
+    "state": "CA"
+  },
+  "friends": [{
+      "name": "Alice",
+      "age": 28
+    },
+    {
+      "name": "Bob",
+      "age": 32
+    }
+  ]
+}
+```
+
+To get the value from the key that called "name", use the function as follows:
+
+```text
+GetJsonValue(${studentsList},"name")-> returns 'Jhon Doe'
+```
+
+To get the value from the key that called "city", use the function as follows:
+
+```text
+GetJsonValue(${studentsList},"address.city")-> returns 'Anytown'
+```
+
+To get the value from the key that called "age" that associated to Alice, use the function as follows:
+
+```text
+GetJsonValue(${studentsList},"friends[0].age")-> returns '28'
+```
+
+To get the value from the key that called "still.student", use the function as follows:
+
+```text
+GetJsonValue(${studentsList},"[still.student]")-> returns 'false'
+```
+
+## Length
+
+The Length function receives a single text string as input and returns an integer value representing the length of that string. If the input string is empty, the function will return '0'. This ensures consistent behavior and provides a convenient way to determine the length of text while handling empty strings gracefully. If the input is not a string type, or if any issues arise during the length calculation, the function returns NULL, ensuring reliability and predictability in its output.
+
+**Syntax**
+
+```text
+Length(string text)
+```
+
+**Example**
+
+```text
+Length("Voca") -> returns '4'
+Length("New York") -> returns '8'
+```
+
+## Lower
+
+The Lower function works with text strings. It receives a single text string as input and returns all the characters within it to lowercase. If the provided input is not of string type or if any issues arise during the lowercase converting process, the function will return NULL. This robust error handling ensures a reliable and predictable response even in cases of unexpected input or converting challenges.
+
+**Syntax**
+
+```text
+Lower(text string)
+```
+
+**Example**
+
+```text
+Lower("New York") -> returns "new york"
+```
+
+## Now
+
+The Now function returns the current date and time in a specific tenant time zone as a date object, represented as 'MM/dd/yyyy hh:mm:ss tt'. It provides accurate timestamping and handles unexpected errors by returning NULL when issues arise during the process.
+
+**Syntax**
+
+```text
+Now()
+```
+
+**Example Usage**
+
+```text
+Now()
+```
+
+## NowUtc
+
+The ‘NowUtc’ function returns the current date and time in a UTC time zone as a date object, represented as 'MM/dd/yyyy hh:mm:ss tt.' It provides accurate timestamping and handles unexpected errors by returning NULL when issues arise during the process.
+
+**Syntax**
+
+```text
+NowUtc()
+```
+
+**Example**
+
+```text
+NowUtc()
+```
+
+## Replace
+
+The Replace function manipulates text strings by allowing users to replace specific characters or substrings. The Replace function operates in a case-sensitive manner. With its intuitive syntax and dynamic input options, the Replace function empowers users to enhance productivity and streamline data processing workflows effectively.
+
+**Syntax**
+
+```text
+Replace(Source text string, Old text string, New text string)
+```
+
+**Example**
+
+```text
+Replace("I like bananas", "bananas", "apple") -> returns "I like apples"
+```
+
+## SubString
+
+The SubString function allows you to manipulate and extract specific portions of text or characters from a larger string of content.
+
+The substring function can work in two different ways:
+
+- When provided with a string text, a start index (an integer), and an optional length (also an integer), it returns a portion of the string text that starts at the specified start index and extends for the given length, if provided.
+
+- If the length is not provided, the function returns the portion of the string text from the start index to the end of the text.
+
+The SubString function ensures reliability and predictability by returning NULL in the following scenarios:
+
+- If the provided input text is not of string type.
+
+- If the start index is equal to or greater than the length of the provided text, indicating an invalid starting point.
+
+**Syntax**
+
+```text
+SubString(string text, integer start index)
+SubString(string text, integer start index, integer length)
+```
+
+**Example**
+
+```text
+SubString("How are you?",8) -> "you?"
+SubString("How are you?",4,3) -> "are"
+```
+
+Given that there is a ‘text’ variable saved in the context with the value of “How are you”, you can also use the function as follows:
+
+```text
+SubString(${text},8) -> "you?"
+SubString(${text},4,3) -> "are"
+```
+
+## Trim
+
+The Trim function is used for text manipulation, enabling the removal of spaces from a given text string. It accommodates both a text string and an optional direction as input parameters, allowing users to precisely control the trimming process. When executed, this function returns a modified version of the input text, with spaces eliminated according to the specified direction. If no direction is explicitly provided, the default behavior is to remove all spaces ('ALL'):
+
+- LEFT
+
+- RIGHT
+
+- ALL
+
+**Syntax**
+
+```text
+Trim(string text, string direction)
+```
+
+**Example**
+
+```text
+Trim(" My name is? ","LEFT")-> returns 'My name is? '
+Trim(" My name is? ","RIGHT")-> returns ' My name is?'
+Trim(" My name is? ","ALL")-> returns 'My name is?'
+Trim(" My name is? ","")-> returns 'My name is?'
+```
+
+## Upper
+
+The Upper function works with text strings. It receives a single text string as input and transforms all the characters within it to uppercase. If the provided input is not of string type or if any issues arise during the uppercase converting process, the function will return NULL. This robust error handling ensures a reliable and predictable response even in cases of unexpected input or converting challenges.
+
+**Syntax**
+
+```text
+Upper(string text)
+```
+
+**Example**
+
+```text
+Upper("New York") -> returns 'NEW YORK'
+```
+
+## WeekDay
+
+The WeekDay function is used to determine the day of the week corresponding to a given date. It accepts a date object as input and returns the corresponding day as an integer (0 for Sunday to 6 for Saturday). Robust error handling is in place to ensure reliability, with the function returning NULL if the input is not a date object or if any issues arise during the converting process.
+
+**Syntax**
+
+```text
+WeekDay(Date date)
+```
+
+**Example**
+
+```text
+WeekDay(NowUtc())
+WeekDay(Date("09/03/2023")) -> returns '0'
+WeekDay(Date("09/15/2023")) -> returns '5'
+```

@@ -1,0 +1,65 @@
+---
+title: "Variable Syntax"
+slug: flow-designer-manual/expressions-and-functions/fd-03-variable-syntax
+---
+
+<Info>
+Content version: **Voca CIC Flow Designer User's Manual, Version 12.2**
+</Info>
+
+The Flow Designer uses variables to store values collected or calculated during the call flow. Variable syntax across the Flow Designer should be in the following format:
+
+`${var_name}`
+
+The above syntax should be used when setting and reading from a variable and when using functions.
+
+Variable name rules:
+
+- Alphanumeric
+
+- Underscore ‘\_’
+
+- Must start with a letter
+
+- Case sensitive
+
+- Maximum length of 24 characters
+
+## Predefined variables
+
+The following are predefined variables. If specific attributes are passed to the script, they can be accessed in the same way.
+
+- `${CLI}` – Caller Line Identification
+
+- `${DNIS}` – Incoming call DNIS
+
+- `${Call_ID}` – Call Identification
+
+- `${asrSessionId}` – Stores the content of the header called X-ASRCall-Session-ID from the upcoming invite to Voca.
+
+  <Note>
+  For variables that you set to control system behavior, see [Reserved Variables](/flow-designer-manual/expressions-and-functions/fd-03-variable-syntax#reserved-variables).
+  </Note>
+
+## Reserved Variables
+
+Reserved variables are fixed variables that control specific call behaviors when used within the **Set Variable** building block. By setting them in your flow using the **Set Variable** building block, you can override specific default behaviors during a call.
+
+### DISABLE\_REC
+
+Controls whether a call is recorded, regardless of the assigned agent's recording profile.
+
+#### Example use case
+
+During an IVR flow, the caller can be prompted via DTMF to consent to call recording. If the caller does not consent, use this variable to prevent recording when the call is routed to an agent.
+
+| Values | Behavior |
+| --- | --- |
+| “true”, “True”, “1”, “yes” or any non-empty string | Disables call recording, even if the caller reaches an agent whose profile is set to record calls. |
+| "false", "FALSE", "0", or any empty string | Allows call recording if the caller reaches an agent whose profile is set to record calls. |
+
+- To apply this variable during the call, the flow must include a **Display Data** block after setting this variable.
+
+- If this variable is not set, call recording follows the agent's recording profile by default.
+
+- This variable does not persist if the call is transferred.
