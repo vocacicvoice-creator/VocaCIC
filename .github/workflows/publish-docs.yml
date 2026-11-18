@@ -13,6 +13,12 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: "20"
+      - name: Fetch fonts (Poppins, IBM Plex Mono)
+        run: |
+          mkdir -p fern/assets/fonts /tmp/fonts && cd /tmp/fonts
+          npm pack @fontsource/poppins@5.3.0 @fontsource/ibm-plex-mono@5.3.0 > /dev/null
+          for t in *.tgz; do tar xzf "$t"; cp package/files/*-latin-*-normal.woff2 "$GITHUB_WORKSPACE/fern/assets/fonts/"; rm -rf package; done
+          ls "$GITHUB_WORKSPACE/fern/assets/fonts"
       - name: Install Fern CLI
         run: npm install -g fern-api
       - name: Check
