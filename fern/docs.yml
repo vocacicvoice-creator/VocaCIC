@@ -3,6 +3,11 @@ instances:
 
 title: Voca CIC Docs
 
+logo:
+  light: ./assets/logo/voca-audiocodes-logo.png
+  height: 28
+  href: /home
+
 favicon: ./assets/favicon.png
 
 css: ./styles.css
@@ -11,7 +16,7 @@ colors:
   accentPrimary: "#6C5CE0"
   background: "#FFFFFF"
   border: "#E3E8F0"
-  header-background: "#FFFFFF"
+  header-background: "#0E1020"
   sidebar-background: "#FFFFFF"
   card-background: "#F4F6FA"
 
@@ -64,11 +69,11 @@ theme:
   tabs:
     style: bubble
 
-landing-page:
-  page: Home
-  path: ./pages/home.mdx
-
 tabs:
+  home:
+    display-name: Home
+    icon: fa-solid fa-house
+    skip-slug: true
   admin-guide:
     display-name: Admin Guide
     icon: fa-solid fa-user-gear
@@ -83,6 +88,10 @@ tabs:
     skip-slug: true
 
 navigation:
+- tab: home
+  layout:
+  - page: Home
+    path: ./pages/home.mdx
 - tab: admin-guide
   layout:
   - section: Getting Started
