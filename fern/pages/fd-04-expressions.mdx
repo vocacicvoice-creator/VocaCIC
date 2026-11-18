@@ -1,0 +1,75 @@
+---
+title: "Expressions"
+slug: flow-designer-manual/expressions-and-functions/fd-04-expressions
+---
+
+<Info>
+Content version: **Voca CIC Flow Designer User's Manual, Version 12.2**
+</Info>
+
+The Flow Designer uses expressions as part of the building blocks. The following are different types of expressions that you can use:
+
+- [Arithmetic](/flow-designer-manual/expressions-and-functions/fd-04-expressions#arithmetic)
+
+- [String](/flow-designer-manual/expressions-and-functions/fd-04-expressions#string)
+
+- [Boolean](/flow-designer-manual/expressions-and-functions/fd-04-expressions#boolean)
+
+## Arithmetic
+
+You can enter expressions like:
+
+- Adding numbers: `30 + 25.4`
+
+- Context variables: `${ticketPrice} * ${tax}`
+
+Arithmetic expressions can be applied for any arithmetic operation.
+
+## String
+
+- You can use strings in expressions, for example, by using a Play Prompt\\ Text-to-Speech to create the following text-to-speech prompt:
+
+  ```text
+  "The name of the show you have selected is " + ${selectedShow}
+  ```
+
+- You can use strings in expressions, for example, by using a Play Prompt\\Text-to-Speech to create the following text-to-speech prompt with two results:
+
+  ```text
+  "The name of the show you have selected is " + ${selectedShow}
+  + "and the price for the ticket will be " + ${ticketPrice}
+  ```
+
+## Boolean
+
+In the Conditions block, you need to enter an expression that produces a Boolean result. For example:
+
+- `${ticketPrice} > 30`
+
+- `${selectedShow} == "Friends"`
+
+- `${selectedShow} == "Friends" && ${ticketType} == "VIP"`
+
+- `${selectedShow} == "Friends" || ${selectedShow} == "Chernobyl"`
+
+- `${ticketPrice} >= 30 || ${ticketPrice} <= 30`
+
+Voca supports the following Boolean operators:
+
+- Greater / less than:
+
+  - &gt;
+
+  - &lt;
+
+- Greater / less than or equals to:
+
+  - &gt;=
+
+  - &lt;=
+
+- Equals / not equals:
+
+  - ==
+
+  - !=

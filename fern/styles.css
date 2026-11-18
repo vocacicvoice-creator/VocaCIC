@@ -1,0 +1,10 @@
+/* Keep small UI icons inside step text inline instead of as centered block images. */
+p img[alt="icon"],
+p img[alt$=" icon"],
+p img[alt="button"] {
+  display: inline !important;
+  margin: 0 0.2em !important;
+  vertical-align: middle;
+  max-height: 1.6em;
+  width: auto;
+}

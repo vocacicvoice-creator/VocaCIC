@@ -1,109 +1,199 @@
 instances:
-  - url: vocacic.docs.buildwithfern.com
-
+- url: vocacic.docs.buildwithfern.com
 title: Voca CIC Docs
-
+announcement:
+  message: 'Content versions: Voca CIC Administrator''s Guide 12.2.1 · Flow Designer User''s Manual 12.2'
 colors:
   accentPrimary:
-    light: "#1976D2"
-    dark: "#4FB3F6"
+    light: '#1976D2'
+    dark: '#4FB3F6'
   background:
-    light: "#FFFFFF"
-    dark: "#1B1E26"
-
+    light: '#FFFFFF'
+    dark: '#1B1E26'
+css: ./styles.css
 layout:
   searchbar-placement: header
   tabs-placement: header
-
+tabs:
+  admin-guide:
+    display-name: Administrator's Guide 12.2.1
+    icon: fa-solid fa-user-gear
+    skip-slug: true
+  flow-designer:
+    display-name: Flow Designer Manual 12.2
+    icon: fa-solid fa-diagram-project
+    skip-slug: true
 navigation:
-- section: Getting Started
-  contents:
-  - page: Welcome
-    path: ./pages/index.mdx
-  - page: Introduction to Voca CIC
-    path: ./pages/admin-01-introduction.mdx
-  - page: Getting Started with Voca Web Management
-    path: ./pages/admin-02-getting-started.mdx
-- section: Tenant Administration
-  contents:
-  - page: Managing Contacts
-    path: ./pages/admin-03-managing-contacts.mdx
-  - page: Managing Departments
-    path: ./pages/admin-04-managing-departments.mdx
-  - section: Configuration
-    path: ./pages/admin-06-configuration.mdx
+- tab: admin-guide
+  layout:
+  - section: Getting Started
     contents:
-    - section: Configuring Interaction Manager
-      path: ./pages/admin-06-1-configuring-interaction-manager.mdx
-      contents:
-      - page: Configuring Voice Settings
-        path: ./pages/admin-06-1-1-configuring-voice-settings.mdx
-      - page: Configuring Email Interaction Settings
-        path: ./pages/admin-06-1-2-configuring-email-interaction-settings.mdx
-      - page: Configuring Chat Interaction Settings
-        path: ./pages/admin-06-1-3-configuring-chat-interaction-settings.mdx
-    - page: Adding a Voice Prompt
-      path: ./pages/admin-06-2-adding-a-voice-prompt.mdx
-    - page: Configuring Menu Settings
-      path: ./pages/admin-06-3-configuring-menu-settings.mdx
-    - section: Configuring Routing
-      path: ./pages/admin-06-4-configuring-routing.mdx
-      contents:
-      - page: Configuring Skills
-        path: ./pages/admin-06-4-1-configuring-skills.mdx
-      - page: Configuring Workers
-        path: ./pages/admin-06-4-2-configuring-workers.mdx
-      - page: Configuring Recording Profiles
-        path: ./pages/admin-06-4-3-configuring-recording-profiles.mdx
-      - page: Configuring Worker Status Events
-        path: ./pages/admin-06-4-4-configuring-worker-status-events.mdx
-      - page: Configuring Conversation Templates
-        path: ./pages/admin-06-4-5-configuring-conversation-templates.mdx
-      - page: Configuring Workers Group
-        path: ./pages/admin-06-4-6-configuring-workers-group.mdx
-      - page: Configuring Callback
-        path: ./pages/admin-06-4-7-configuring-callback.mdx
-      - page: Configuring Queues
-        path: ./pages/admin-06-4-8-configuring-queues.mdx
-    - page: Defining Working Hours
-      path: ./pages/admin-06-5-defining-working-hours.mdx
-    - page: Defining Events and Holidays
-      path: ./pages/admin-06-6-defining-events-and-holidays.mdx
-    - page: System Settings
-      path: ./pages/admin-06-7-system-settings.mdx
-    - page: Access Management
-      path: ./pages/admin-06-8-access-management.mdx
-    - page: Dialplan Settings
-      path: ./pages/admin-06-9-dialplan-settings.mdx
-  - page: Actions
-    path: ./pages/admin-08-actions.mdx
-  - page: Call Dispositions
-    path: ./pages/admin-09-call-dispositions.mdx
-  - page: DNIS Numbers for Operator Connect and Calling Plan
-    path: ./pages/admin-a-appendix-dnis-number-for-operator-connect-microsoft-calling-plan.mdx
-- section: Reports and Analytics
-  contents:
-  - section: Generating Reports
-    path: ./pages/admin-07-generating-reports.mdx
+    - page: Welcome
+      path: ./pages/index.mdx
+    - page: Introduction to Voca CIC
+      path: ./pages/admin-01-introduction.mdx
+    - page: Getting Started with Voca Web Management
+      path: ./pages/admin-02-getting-started.mdx
+  - section: Tenant Administration
     contents:
-    - page: Call Queue Reports
-      path: ./pages/admin-07-1-call-queue-reports.mdx
-    - section: Interaction Center Reports
-      path: ./pages/admin-07-2-interaction-center-reports.mdx
+    - page: Managing Contacts
+      path: ./pages/admin-03-managing-contacts.mdx
+    - page: Managing Departments
+      path: ./pages/admin-04-managing-departments.mdx
+    - section: Configuration
+      path: ./pages/admin-06-configuration.mdx
       contents:
-      - page: Report Scheduler
-        path: ./pages/admin-07-2-1-report-scheduler.mdx
-      - page: Interaction Center Reports - Voice
-        path: ./pages/admin-07-2-2-interaction-center-reports-voice.mdx
-      - page: Interaction Center Reports - Email
-        path: ./pages/admin-07-2-3-interaction-center-reports-email.mdx
-      - page: Interaction Center Reports - Chat
-        path: ./pages/admin-07-2-4-interaction-center-reports-chat.mdx
-      - page: Real-Time Dashboard
-        path: ./pages/admin-07-2-5-real-time-dashboard.mdx
-    - page: IVR Reports
-      path: ./pages/admin-07-3-ivr-reports.mdx
-- section: Flow Designer
-  contents:
-  - page: Flow Designer in Voca Web Management
-    path: ./pages/admin-05-flow-designer.mdx
+      - section: Configuring Interaction Manager
+        path: ./pages/admin-06-1-configuring-interaction-manager.mdx
+        contents:
+        - page: Configuring Voice Settings
+          path: ./pages/admin-06-1-1-configuring-voice-settings.mdx
+        - page: Configuring Email Interaction Settings
+          path: ./pages/admin-06-1-2-configuring-email-interaction-settings.mdx
+        - page: Configuring Chat Interaction Settings
+          path: ./pages/admin-06-1-3-configuring-chat-interaction-settings.mdx
+      - page: Adding a Voice Prompt
+        path: ./pages/admin-06-2-adding-a-voice-prompt.mdx
+      - page: Configuring Menu Settings
+        path: ./pages/admin-06-3-configuring-menu-settings.mdx
+      - section: Configuring Routing
+        path: ./pages/admin-06-4-configuring-routing.mdx
+        contents:
+        - page: Configuring Skills
+          path: ./pages/admin-06-4-1-configuring-skills.mdx
+        - page: Configuring Workers
+          path: ./pages/admin-06-4-2-configuring-workers.mdx
+        - page: Configuring Recording Profiles
+          path: ./pages/admin-06-4-3-configuring-recording-profiles.mdx
+        - page: Configuring Worker Status Events
+          path: ./pages/admin-06-4-4-configuring-worker-status-events.mdx
+        - page: Configuring Conversation Templates
+          path: ./pages/admin-06-4-5-configuring-conversation-templates.mdx
+        - page: Configuring Workers Group
+          path: ./pages/admin-06-4-6-configuring-workers-group.mdx
+        - page: Configuring Callback
+          path: ./pages/admin-06-4-7-configuring-callback.mdx
+        - page: Configuring Queues
+          path: ./pages/admin-06-4-8-configuring-queues.mdx
+      - page: Defining Working Hours
+        path: ./pages/admin-06-5-defining-working-hours.mdx
+      - page: Defining Events and Holidays
+        path: ./pages/admin-06-6-defining-events-and-holidays.mdx
+      - page: System Settings
+        path: ./pages/admin-06-7-system-settings.mdx
+      - page: Access Management
+        path: ./pages/admin-06-8-access-management.mdx
+      - page: Dialplan Settings
+        path: ./pages/admin-06-9-dialplan-settings.mdx
+    - page: Actions
+      path: ./pages/admin-08-actions.mdx
+    - page: Call Dispositions
+      path: ./pages/admin-09-call-dispositions.mdx
+    - page: DNIS Numbers for Operator Connect and Calling Plan
+      path: ./pages/admin-a-appendix-dnis-number-for-operator-connect-microsoft-calling-plan.mdx
+  - section: Reports and Analytics
+    contents:
+    - section: Generating Reports
+      path: ./pages/admin-07-generating-reports.mdx
+      contents:
+      - page: Call Queue Reports
+        path: ./pages/admin-07-1-call-queue-reports.mdx
+      - section: Interaction Center Reports
+        path: ./pages/admin-07-2-interaction-center-reports.mdx
+        contents:
+        - page: Report Scheduler
+          path: ./pages/admin-07-2-1-report-scheduler.mdx
+        - page: Interaction Center Reports - Voice
+          path: ./pages/admin-07-2-2-interaction-center-reports-voice.mdx
+        - page: Interaction Center Reports - Email
+          path: ./pages/admin-07-2-3-interaction-center-reports-email.mdx
+        - page: Interaction Center Reports - Chat
+          path: ./pages/admin-07-2-4-interaction-center-reports-chat.mdx
+        - page: Real-Time Dashboard
+          path: ./pages/admin-07-2-5-real-time-dashboard.mdx
+      - page: IVR Reports
+        path: ./pages/admin-07-3-ivr-reports.mdx
+  - section: Flow Designer
+    contents:
+    - page: Flow Designer in Voca Web Management
+      path: ./pages/admin-05-flow-designer.mdx
+- tab: flow-designer
+  layout:
+  - section: Getting Started
+    contents:
+    - page: Welcome
+      path: ./pages/fd-index.mdx
+    - page: Introduction
+      path: ./pages/fd-01-introduction.mdx
+    - page: Accessing Flow Designer
+      path: ./pages/fd-02-accessing-flow-designer.mdx
+  - section: Expressions and Functions
+    contents:
+    - page: Variable Syntax
+      path: ./pages/fd-03-variable-syntax.mdx
+    - page: Expressions
+      path: ./pages/fd-04-expressions.mdx
+    - page: Supported Functions
+      path: ./pages/fd-05-supported-functions.mdx
+  - section: Building Blocks
+    path: ./pages/fd-06-building-blocks.mdx
+    contents:
+    - section: Interactions
+      path: ./pages/fd-06-1-interactions.mdx
+      contents:
+      - page: Speech Input
+        path: ./pages/fd-06-1-1-speech-input.mdx
+      - page: DTMF Menu
+        path: ./pages/fd-06-1-2-dtmf-menu.mdx
+      - page: Collect Digits
+        path: ./pages/fd-06-1-3-collect-digits.mdx
+      - page: Play Prompt
+        path: ./pages/fd-06-1-4-play-prompt.mdx
+      - page: Text-to-Speech
+        path: ./pages/fd-06-1-5-text-to-speech.mdx
+      - page: OpenAI
+        path: ./pages/fd-06-1-6-openai.mdx
+    - section: Actions
+      path: ./pages/fd-06-2-actions.mdx
+      contents:
+      - page: HTTP
+        path: ./pages/fd-06-2-1-http.mdx
+      - page: Go To Menu
+        path: ./pages/fd-06-2-2-go-to-menu.mdx
+      - page: Transfer
+        path: ./pages/fd-06-2-3-transfer.mdx
+      - page: Display Data
+        path: ./pages/fd-06-2-4-display-data.mdx
+      - page: Go To Queue
+        path: ./pages/fd-06-2-5-go-to-queue.mdx
+      - page: Go To Destination
+        path: ./pages/fd-06-2-6-go-to-destination.mdx
+      - page: Go To Contact
+        path: ./pages/fd-06-2-7-go-to-contact.mdx
+      - page: Leave Message
+        path: ./pages/fd-06-2-8-leave-message.mdx
+      - page: Send SMS
+        path: ./pages/fd-06-2-9-send-sms.mdx
+      - page: Go To Flow
+        path: ./pages/fd-06-2-10-go-to-flow.mdx
+      - page: Select Language
+        path: ./pages/fd-06-2-11-select-language.mdx
+    - section: Call-Flow Logic
+      path: ./pages/fd-06-3-call-flow-logic.mdx
+      contents:
+      - page: Conditions
+        path: ./pages/fd-06-3-1-conditions.mdx
+      - page: Switch
+        path: ./pages/fd-06-3-2-switch.mdx
+      - page: Counter
+        path: ./pages/fd-06-3-3-counter.mdx
+      - page: Set Variable
+        path: ./pages/fd-06-3-4-set-variable.mdx
+      - page: End
+        path: ./pages/fd-06-3-5-end.mdx
+  - section: Working with Flows
+    contents:
+    - page: Save
+      path: ./pages/fd-07-save.mdx
+    - page: Search
+      path: ./pages/fd-08-search.mdx
