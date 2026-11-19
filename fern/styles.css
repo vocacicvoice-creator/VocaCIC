@@ -1,4 +1,5 @@
 /* Keep small UI icons inside step text inline instead of as centered block images. */
+p img[alt=""],
 p img[alt="icon"],
 p img[alt$=" icon"],
 p img[alt="button"] {
